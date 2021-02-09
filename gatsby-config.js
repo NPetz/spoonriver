@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Spoon River",
+    siteUrl: "https://eloquent-elion-8f88ca.netlify.app/"
   },
   plugins: [
     "gatsby-plugin-theme-ui",
