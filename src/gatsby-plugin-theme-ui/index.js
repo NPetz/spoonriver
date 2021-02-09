@@ -8,9 +8,11 @@ const typography = toTheme(grandView)
 export default merge(typography, {
   // optional style overrides go here
   colors: {
-    text: '#121',
-    background: '#ddd',
-    primary: '#E07A5F',
+    text: '#2F3E46',
+    background: '#CAD2C5',
+    primary: '#52796F',
+    secondary: '#84A98C',
+    accent: '#bce784'
   },
 
   styles: {
