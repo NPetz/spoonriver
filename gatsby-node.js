@@ -1,4 +1,4 @@
-const data = require('../spoonRiver.json')
+const data = require('./data/spoonRiver.json')
 
 
 

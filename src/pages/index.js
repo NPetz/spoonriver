@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-import data from "../../../spoonRiver.json"
+import data from "../../data/spoonRiver.json"
 
 
 // markup
