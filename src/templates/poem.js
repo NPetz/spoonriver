@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useEffect } from 'react'
 
 import Layout from "../components/Layout"
 import PoemNavBtn from "../components/PoemNavBtn"
@@ -10,6 +11,14 @@ export default function Poem({ pageContext: { edge } }) {
     let nextPoem = edge.next
     let previousPoem = edge.previous
 
+    useEffect(() => {
+        window.addEventListener('visibilitychange', () => {
+
+            window.localStorage.setItem('lastpoem', `${poem.order}`);
+
+        })
+
+    })
 
 
     return (
@@ -74,13 +83,6 @@ export default function Poem({ pageContext: { edge } }) {
                     }
 
                 </div>
-
-                <script>{window.addEventListener('visibilitychange', () => {
-
-                    window.localStorage.setItem('lastpoem', `${poem.order}`);
-
-                })}
-                </script>
             </div>
         </Layout >
 

@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { graphql } from "gatsby"
+import { useEffect } from 'react'
 
 import LikeBtn from "../components/LikeBtn"
 
@@ -10,7 +11,31 @@ import LikeBtn from "../components/LikeBtn"
 // markup
 const IndexPage = ({ data }) => {
 
-  console.log(data)
+  useEffect(() => {
+
+
+    window.addEventListener('pageshow', () => {
+
+      let lastpoem = window.localStorage.getItem('lastpoem')
+
+      if (lastpoem) {
+
+        let el = document.getElementById(`${lastpoem}`)
+        el.style.backgroundColor = '#2F3E46'
+        el.style.color = '#F4F6F3'
+
+        let btn = document.getElementById("title")
+        btn.addEventListener('click', () => {
+          el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
+        })
+
+      }
+    })
+  });
+
+
+
+
 
   return (
     <main sx={{
@@ -116,34 +141,11 @@ const IndexPage = ({ data }) => {
 
       ))}
 
-      <script>
-
-        {
-
-
-          window.addEventListener('pageshow', () => {
-
-            let lastpoem = window.localStorage.getItem('lastpoem')
-
-            if (lastpoem) {
-
-              let el = document.getElementById(`${lastpoem}`)
-              el.style.backgroundColor = '#2F3E46'
-              el.style.color = '#F4F6F3'
-
-              let btn = document.getElementById("title")
-              btn.addEventListener('click', () => {
-                el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
-              })
-
-            }
-          })
-        }
-
-
-      </script>
     </main >
   )
+
+
+
 }
 
 export default IndexPage
