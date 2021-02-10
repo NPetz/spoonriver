@@ -1,104 +1,88 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
+import Layout from "../components/Layout"
+import PoemNavBtn from "../components/PoemNavBtn"
 
+export default function Poem({ pageContext: { edge } }) {
 
-// import React from "react"
-// import { graphql } from "gatsby"
-
-// const ComponentName = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
-
-// export const query = graphql`
-//   {
-//     allSpoonRiverJson {
-//       edges {
-//         node {
-//           slug
-//           order
-//           text
-//           title
-//         }
-//         next {
-//           slug
-//           title
-//           order
-//         }
-//         previous {
-//           slug
-//           title
-//           order
-//         }
-//       }
-//     }
-//   }
-// `
-
-// export default ComponentName
-
-
-// logic
-
-
-export default function Poem({ pageContext: { poem } }) {
-
-
-
+    let poem = edge.node
+    let nextPoem = edge.next
+    let previousPoem = edge.previous
 
 
 
     return (
-        <main sx={{
-            display: "flex",
-            flexDirection: 'column',
-            gap: '2rem',
-            padding: "2rem",
-            alignItems: 'center',
-        }}>
-            <article>
-                <h1 sx={{
-                    borderRadius: "10px",
-                    boxShadow: "1px 1px 10px #131711, -1px -1px 10px #F4F6F3",
-                    width: ['90vw', '46rem', '46rem',],
-                    backgroundColor: "background",
-                    textAlign: 'center',
-                    color: "#F4F6F3",
-                    caretColor: "#262626",
-                    textShadow: "1px 1px 10px #131711, -1px -1px 10px #F4F6F3",
-                    fontSize: '2rem',
-                }}>
-                    {poem.title}</h1>
+        <Layout>
+            <div sx={{
+                display: "flex",
+                flexDirection: 'column',
+                gap: '2rem',
+                padding: "2rem",
+                alignItems: 'center',
+            }}>
+                <article>
+                    <h1 sx={{
+                        borderRadius: "10px",
+                        boxShadow: "shallowshade",
+                        width: ['90vw', '46rem', '46rem',],
+                        textAlign: 'center',
+                        color: 'background',
+                        backgroundColor: 'primary',
+                        fontSize: '2rem',
+                    }}>
+                        {poem.title}</h1>
 
-                <p sx={{
-                    borderRadius: "10px",
-                    boxShadow: "1px 1px 10px #131711, -1px -1px 10px #F4F6F3",
-                    width: ['90vw', '46rem', '46rem',],
-                    backgroundColor: "background",
-                    caretColor: "#262626",
-                    padding: '2rem 4rem',
-                    whiteSpace: 'pre',
-                }}>{poem.text}</p>
-
-                {/* {poem.text.split('\n').map((verse, i) => (
-
-                    (verse === '') ? <br key={i}/> :  <p sx={{
-                        lineHeight: '2em',
-                        margin: '0',
-                        padding: '0',
-                        wordSpacing: 'auto',
+                    <p sx={{
+                        textAlign: 'center',
+                        borderRadius: "10px",
+                        boxShadow: "shallowshade",
+                        width: ['90vw', '46rem', '46rem',],
+                        backgroundColor: "background",
+                        padding: '2rem 4rem',
                         whiteSpace: 'pre',
-                    }} key={i}>{verse}</p>
+                        color: 'text',
+                        fontSize: '1rem',
+                        fontSmooth: 'true',
+                        margin: '0',
+                        lineHeight: '1.5rem'
+                    }}>{poem.text}</p>
 
-                ))
-                } */}
 
-            </article>
-            <script>{window.addEventListener('visibilitychange', () => {
 
-                window.localStorage.setItem('lastpoem', `${poem.order}`);
+                </article>
 
-            })}
-            </script>
-        </main>
+
+                <div
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'stretch',
+                        gap: '2rem',
+                        width: ['90vw', '46rem', '46rem',],
+                    }}
+                >
+
+                    {previousPoem &&
+                        <PoemNavBtn path={`/${previousPoem.slug}`} >Previous</PoemNavBtn>
+                    }
+
+                    <PoemNavBtn path="/" >Home</PoemNavBtn>
+
+                    {nextPoem &&
+                        <PoemNavBtn path={`/${nextPoem.slug}`} >Next</PoemNavBtn>
+
+                    }
+
+                </div>
+
+                <script>{window.addEventListener('visibilitychange', () => {
+
+                    window.localStorage.setItem('lastpoem', `${poem.order}`);
+
+                })}
+                </script>
+            </div>
+        </Layout >
 
     )
 }

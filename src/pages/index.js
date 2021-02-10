@@ -1,17 +1,16 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { graphql } from "gatsby"
 
-import data from "../../data/spoonRiver.json"
-// import AniLink from "gatsby-plugin-transition-link/AniLink"
-
-// logic
+import LikeBtn from "../components/LikeBtn"
 
 
 
 
 // markup
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
 
+  console.log(data)
 
   return (
     <main sx={{
@@ -27,56 +26,52 @@ const IndexPage = () => {
       <div id='title'
         sx={{
           borderRadius: "10px",
-          boxShadow: " 3px 3px 30px #131711, -3px -3px 30px #F4F6F3",
-          width: ['90vw', '46rem', '46rem',],
-          backgroundColor: "#F4F6F3",
+          boxShadow: "shallowshade",
+          width: ['90vw', '90vw', '46rem',],
+          backgroundColor: "primary",
           textAlign: 'center',
           color: "background",
-          caretColor: "#262626",
-          textShadow: "1px 1px 10px #131711, -1px -1px 10px #F4F6F3",
-          fontSize: '2rem',
+          fontSize: ['1rem', '1.5rem', '2rem'],
           zIndex: '1',
+          cursor: 'pointer',
         }}>
         <h1>The Spoon River Anthology</h1>
-        <div id="btn">⇩⇩⇩</div>
-
       </div>
 
 
 
 
-      {data.map(poem => (
+      {data.allSpoonRiverJson.edges.map(edge => (
 
 
-        <div key={poem.order.toString()}
+        <div key={edge.node.order.toString()}
           sx={{
             display: 'flex',
             flexWrap: 'nowrap',
             gap: '1rem',
             alignItems: 'center',
+            width: ['90vw', '90vw', '50rem',],
           }}
         >
 
-          <div className='like' sx={{
-            width: '4rem',
-            height: '4rem',
-            borderRadius: '1rem',
-            boxShadow: "1px 1px 10px #131711, -1px -1px 10px #F4F6F3",
-            ':hover': {
-              backgroundColor: 'accent'
-            }
-          }}></div>
+          <LikeBtn></LikeBtn>
+
+
           <div
 
-            id={poem.order.toString()}
+            id={edge.node.order.toString()}
             sx={{
               borderRadius: "10px",
-              boxShadow: "1px 1px 10px #131711, -1px -1px 10px #F4F6F3",
+              boxShadow: "shallowshade",
               width: ['90vw', '46rem', '46rem',],
+              fontSize: ['0.3rem', '0.5rem', '0.8rem',],
               backgroundColor: "background",
-              color: 'background',
-              caretColor: "#262626",
-              textShadow: "0.5px 0.5px 5px #131711, -0.5px -0.5px 5px #F4F6F3",
+              color: 'primary',
+              transition: 'all 0.2s',
+              ':hover': {
+                backgroundColor: "primary",
+                color: 'background',
+              }
             }}>
 
 
@@ -85,28 +80,31 @@ const IndexPage = () => {
               display: 'flex',
               textDecoration: 'none',
               color: 'inherit',
-              transition: 'color 0.3s',
+              fontSize: '2em',
+              transition: 'all 0.2s',
               ":hover": {
-                color: '#F4F6F3',
+                color: 'inherit',
               }
             }}
-              href={`/${poem.slug}`}>
+              href={`/${edge.node.slug}`}>
 
               <h2
                 sx={{
                   padding: "1rem 2rem",
                   margin: "0",
                 }}
-              >{poem.title}</h2>
+              >{edge.node.title}</h2>
+
               <span sx={{
                 padding: "0rem 2rem",
                 marginLeft: 'auto',
                 textAlign: 'center',
                 display: 'grid',
                 placeItems: 'center',
-                fontSize: '2em',
                 fontWeight: 'bold'
-              }}>{poem.order}</span>
+              }}>
+                {edge.node.order}
+              </span>
 
 
             </a>
@@ -127,13 +125,13 @@ const IndexPage = () => {
 
             let lastpoem = window.localStorage.getItem('lastpoem')
 
-
             if (lastpoem) {
 
               let el = document.getElementById(`${lastpoem}`)
-              el.style.backgroundColor = 'whitesmoke'
+              el.style.backgroundColor = '#2F3E46'
+              el.style.color = '#F4F6F3'
 
-              let btn = document.getElementById("btn")
+              let btn = document.getElementById("title")
               btn.addEventListener('click', () => {
                 el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
               })
@@ -149,3 +147,17 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  {
+    allSpoonRiverJson {
+      edges {
+        node {
+          title
+          order
+          slug
+        }
+      }
+    }
+  }
+`

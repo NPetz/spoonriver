@@ -9,10 +9,14 @@ export default merge(typography, {
   // optional style overrides go here
   colors: {
     text: '#2F3E46',
-    background: '#CAD2C5',
+    background: '#F4F6F3',
     primary: '#52796F',
-    secondary: '#84A98C',
-    accent: '#bce784'
+    like: '#e86252',
+    bookmark: '#2F3E46'
+  },
+  shadows: {
+    deepshade: '1px 1px 10px #131711, -1px -1px 10px #fff',
+    shallowshade: '0.5px 0.5px 5px #131711, -0.5px -0.5px 5px #fff'
   },
 
   styles: {

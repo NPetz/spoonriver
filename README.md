@@ -26,3 +26,5 @@
 - [ ] background illustration based on poem metadata
 - [ ] keep track of visited and not visited, time on page, number of visits, etc per poem
 - [ ] congratulatory message on visiting all pages
+- [ ] save pieces by higlighting
+- [ ] share portions
