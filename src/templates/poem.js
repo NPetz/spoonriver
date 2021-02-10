@@ -2,7 +2,49 @@
 import { jsx } from "theme-ui"
 
 
+
+// import React from "react"
+// import { graphql } from "gatsby"
+
+// const ComponentName = ({ data }) => <pre>{JSON.stringify(data, null, 4)}</pre>
+
+// export const query = graphql`
+//   {
+//     allSpoonRiverJson {
+//       edges {
+//         node {
+//           slug
+//           order
+//           text
+//           title
+//         }
+//         next {
+//           slug
+//           title
+//           order
+//         }
+//         previous {
+//           slug
+//           title
+//           order
+//         }
+//       }
+//     }
+//   }
+// `
+
+// export default ComponentName
+
+
+// logic
+
+
 export default function Poem({ pageContext: { poem } }) {
+
+
+
+
+
 
     return (
         <main sx={{
@@ -50,6 +92,13 @@ export default function Poem({ pageContext: { poem } }) {
                 } */}
 
             </article>
+            <script>{window.addEventListener('visibilitychange', () => {
+
+                window.localStorage.setItem('lastpoem', `${poem.order}`);
+
+            })}
+            </script>
         </main>
+
     )
 }

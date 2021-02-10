@@ -12,6 +12,7 @@ module.exports = {
     //   },
     // },
     "gatsby-plugin-sharp",
+    `gatsby-plugin-transition-link`,
     "gatsby-plugin-sitemap",
     "gatsby-plugin-offline",
     {
@@ -21,6 +22,8 @@ module.exports = {
       },
     },
     "gatsby-transformer-sharp",
+    "gatsby-transformer-json",
+    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -28,6 +31,14 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "poems",
+        path: "./data/",
+      },
+      __key: "poems",
     },
   ],
 };
