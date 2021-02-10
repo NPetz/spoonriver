@@ -12,7 +12,7 @@ import LikeBtn from "../components/LikeBtn"
 const IndexPage = ({ data }) => {
 
 
-  let lastpoem = window.localStorage.getItem('lastpoem')
+  let lastpoem = ''
 
   useEffect(() => {
 
