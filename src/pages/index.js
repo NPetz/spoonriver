@@ -11,26 +11,18 @@ import LikeBtn from "../components/LikeBtn"
 // markup
 const IndexPage = ({ data }) => {
 
+
+  let lastpoem = window.localStorage.getItem('lastpoem')
+
   useEffect(() => {
 
-
-    window.addEventListener('pageshow', () => {
-
-      let lastpoem = window.localStorage.getItem('lastpoem')
-
-      if (lastpoem) {
-
-        let el = document.getElementById(`${lastpoem}`)
-        el.style.backgroundColor = '#2F3E46'
-        el.style.color = '#F4F6F3'
-
-        let btn = document.getElementById("title")
-        btn.addEventListener('click', () => {
-          el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
-        })
-
-      }
+    lastpoem = window.localStorage.getItem('lastpoem')
+    let el = window.document.getElementById(`${lastpoem}`)
+    let title = document.getElementById("title")
+    title.addEventListener('click', () => {
+      el.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" })
     })
+
   });
 
 
@@ -53,7 +45,7 @@ const IndexPage = ({ data }) => {
           borderRadius: "10px",
           boxShadow: "shallowshade",
           width: ['90vw', '90vw', '46rem',],
-          backgroundColor: "primary",
+          backgroundColor: "bookmark",
           textAlign: 'center',
           color: "background",
           fontSize: ['1rem', '1.5rem', '2rem'],
@@ -84,14 +76,16 @@ const IndexPage = ({ data }) => {
 
           <div
 
+
             id={edge.node.order.toString()}
+
             sx={{
               borderRadius: "10px",
               boxShadow: "shallowshade",
               width: ['90vw', '46rem', '46rem',],
               fontSize: ['0.3rem', '0.5rem', '0.8rem',],
-              backgroundColor: "background",
-              color: 'primary',
+              backgroundColor: (lastpoem === edge.node.order.toString()) ? "bookmark" : "background",
+              color: (lastpoem === edge.node.order.toString()) ? "background" : "primary",
               transition: 'all 0.2s',
               ':hover': {
                 backgroundColor: "primary",
