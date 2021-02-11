@@ -1,8 +1,8 @@
 
 // Create blog pages dynamically
 exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions
-    const result = await graphql(`
+  const { createPage } = actions
+  const result = await graphql(`
     query {
         allSpoonRiverJson {
             edges {
@@ -27,13 +27,13 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     }
   `)
-    result.data.allSpoonRiverJson.edges.forEach(edge => {
-        createPage({
-            path: `/${edge.node.slug}`,
-            component: require.resolve("./src/templates/poem.js"),
-            context: {
-                edge
-            },
-        })
+  result.data.allSpoonRiverJson.edges.forEach(edge => {
+    createPage({
+      path: `/${edge.node.slug}`,
+      component: require.resolve("./src/templates/poem.tsx"),
+      context: {
+        edge
+      },
     })
+  })
 }

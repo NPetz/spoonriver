@@ -1,23 +1,34 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
+import { useEffect, useState } from "react"
 
 
-function LikeBtn() {
+
+function LikeBtn(props) {
+
+    const [isFav, setFav] = useState(props.isFav === 'true')
+
+    useEffect(() => {
+        window.localStorage.setItem(`${props.index}`, JSON.stringify(isFav))
+    })
+
+
+
+    let style = {
+        height: ['42px', '42px', '50px',],
+        width: ['42px', '42px', '50px',],
+        flexShrink: 0,
+        boxShadow: "shallowshade",
+        backgroundColor: (isFav) ? "like" : "background",
+        cursor: 'pointer',
+        transition: 'all 0.2s',
+        ':hover': {
+            filter: 'drop-shadow(0px 0px 10px #e86252);',
+        }
+    }
 
     return (
-        <div className='like' sx={{
-            width: ['3rem', '4rem', '5rem',],
-            height: ['3rem', '4rem', '5rem',],
-            minHeight: '3rem',
-            minWidth: '3rem',
-            borderRadius: '1rem',
-            boxShadow: "shallowshade",
-            cursor: 'pointer',
-            transition: 'all 0.2s',
-            ':hover': {
-                backgroundColor: 'like'
-            }
-        }}></div>
+        <div className='like' sx={style} onClick={() => { setFav(!isFav) }}></div>
     )
 
 }

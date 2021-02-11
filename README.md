@@ -8,7 +8,7 @@
 # features (WIP)
 
 - [x] last visited poem
-- [ ] favorites/bookmarks
+- [x] favorites/bookmarks
 - [ ] social sharing
 - [ ] audio playback
 - [ ] full text fuzzy search
