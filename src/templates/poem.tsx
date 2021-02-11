@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import Layout from "../components/Layout";
 import PoemNavBtn from "../components/PoemNavBtn";
 import LikeBtn from "../components/LikeBtn";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 export default function Poem({ pageContext: { edge } }) {
   let poem = edge.node;
@@ -15,7 +16,9 @@ export default function Poem({ pageContext: { edge } }) {
     window.localStorage.setItem("bookmark", `${poem.order}`);
   });
 
-  const [isFav, setFav] = useState(window.localStorage.getItem(poem.order));
+  const [isFav, setFav] = useLocalStorage(
+    window.localStorage.getItem(poem.order)
+  );
 
   return (
     <Layout>

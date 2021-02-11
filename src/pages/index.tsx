@@ -4,7 +4,7 @@ import { graphql } from "gatsby";
 import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import PoemCard from "../components/PoemCard";
-import gatsbyPluginThemeUi from "../gatsby-plugin-theme-ui";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 const IndexPage = ({ data }) => {
   useEffect(() => {
@@ -23,11 +23,11 @@ const IndexPage = ({ data }) => {
     }
   });
 
-  const [bookmark, setBookmark] = useState(
+  const [bookmark, setBookmark] = useLocalStorage(
     window.localStorage.getItem("bookmark")
   );
 
-  const [favs, setFavs] = useState(window.localStorage);
+  const [favs, setFavs] = useLocalStorage(window.localStorage);
 
   return (
     <Layout>
