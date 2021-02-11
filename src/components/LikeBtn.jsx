@@ -35,15 +35,15 @@ function LikeBtn(props) {
 
 
     let style = {
-        height: ['42px', '42px', '50px',],
-        width: ['42px', '42px', '50px',],
+        height: ['36px', '42px', '50px',],
+        width: ['36px', '42px', '50px',],
         flexShrink: 0,
         boxShadow: "shallowshade",
         backgroundColor: (isFav === 'true') ? "like" : "background",
         cursor: 'pointer',
         transition: 'all 0.2s',
         position: 'relative',
-        marginRight: ['-21px', '-21px', '-25px',],
+        marginRight: ['-18px', '-21px', '-25px',],
         zIndex: 0,
         ':hover': {
             boxShadow: "glow",

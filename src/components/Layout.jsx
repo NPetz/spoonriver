@@ -19,10 +19,10 @@ function Layout({ children }) {
 
   return (
     <main sx={{
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding: '1rem 0rem'
+      display: 'grid',
+      minHeight: '100vh',
+      placeItems: 'center',
+      padding: ['1rem 0rem', '1rem 0rem', '1rem 0rem']
     }}>
 
 

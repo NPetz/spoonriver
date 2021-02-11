@@ -39,6 +39,13 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    }, {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Righteous']
+        }
+      }
     },
     {
       resolve: "gatsby-source-filesystem",

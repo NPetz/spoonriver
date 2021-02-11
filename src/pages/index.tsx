@@ -36,6 +36,7 @@ const IndexPage = ({ data }) => {
           flexDirection: "column",
           gap: "1rem",
           alignItems: "center",
+          maxWidth: ["90vw", "80vw", "60vw"],
         }}
       >
         <Header />

@@ -23,11 +23,11 @@ export default function Poem({ pageContext: { edge } }) {
     <Layout>
       <div
         sx={{
+          width: ["95vw", "95vw", "85vw"],
           display: "flex",
           flexDirection: "column",
           gap: "1rem",
           alignItems: "center",
-          width: ["90vw", "24rem", "46rem"],
         }}
       >
         <article
@@ -64,17 +64,27 @@ export default function Poem({ pageContext: { edge } }) {
 
           <p
             sx={{
-              width: "100%",
+              height: "70vh",
+              overflowY: "auto",
               boxShadow: "shallowshade",
-              backgroundColor: "background",
+              backgroundColor: "poemBackground",
               whiteSpace: "pre",
               color: "text",
               fontSmooth: "true",
               lineHeight: "body",
               fontFamily: "body",
-              fontSize: ["0.6rem", "1rem", "1.2rem"],
-              padding: ["1rem", "2rem", "4rem"],
+              fontSize: ["0.5rem", "1.4rem", "1.8rem"],
+              padding: ["0.5rem", "1rem", "2rem"],
               margin: "0",
+              "::-webkit-scrollbar": {
+                width: "0.5em",
+              },
+              "::-webkit-scrollbar-track": {
+                backgroundColor: "background",
+              },
+              "::-webkit-scrollbar-thumb": {
+                backgroundColor: "primary",
+              },
             }}
           >
             {poem.text.replace("\n", "")}

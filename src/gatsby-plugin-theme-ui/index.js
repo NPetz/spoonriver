@@ -1,13 +1,16 @@
+
+
 export default {
   // optional style overrides go here
   colors: {
 
-    text: '#2B2D42',
-    background: '#EDF2F4',
-    primary: '#1a936f',
+    text: '#242423',
+    background: '#E8EDDF',
+    primary: '#F5CB5C',
     like: '#EF233C',
-    bookmarkText: '#EDF2F4',
-    bookmarkBackground: '#2B2D42',
+    bookmarkText: '#E8EDDF',
+    bookmarkBackground: '#242423',
+    poemBackground: '#eee',
 
     modes: {
 
@@ -18,20 +21,22 @@ export default {
         like: '#EF233C',
         bookmarkText: '#2B2D42',
         bookmarkBackground: '#1a936f',
+        poemBackground: '#242423',
       },
 
     },
   },
 
   shadows: {
-    shallowshade: '0px 0px 5px #1a936f, 0px 0px 3px #2B2D42',
-    glow: '0px 0px 3px #1a936f, 0px 0px 1px #2B2D42'
+    shallowshade: '0px 0px 5px #242423, 0px 0px 3px #2B2D42',
+    glow: '0px 0px 3px #F5CB5C, 0px 0px 1px #2B2D42'
   },
 
   fonts: {
     body: "'Bodoni Moda', serif",
     heading: "'Heebo', sans-serif",
     monospace: "Menlo, monospace",
+    display: "'Righteous', cursive",
   },
 
   fontWeights: {
