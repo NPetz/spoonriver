@@ -23,11 +23,9 @@ const IndexPage = ({ data }) => {
     }
   });
 
-  const [bookmark, setBookmark] = useLocalStorage(
-    window.localStorage.getItem("bookmark")
-  );
+  const [bookmark, setBookmark] = useLocalStorage("bookmark");
 
-  const [favs, setFavs] = useLocalStorage(window.localStorage);
+  const [favs, setFavs] = useLocalStorage();
 
   return (
     <Layout>

@@ -16,9 +16,7 @@ export default function Poem({ pageContext: { edge } }) {
     window.localStorage.setItem("bookmark", `${poem.order}`);
   });
 
-  const [isFav, setFav] = useLocalStorage(
-    window.localStorage.getItem(poem.order)
-  );
+  const [isFav, setFav] = useLocalStorage(poem.order);
 
   return (
     <Layout>
