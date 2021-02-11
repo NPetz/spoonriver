@@ -23,9 +23,9 @@ const IndexPage = ({ data }) => {
     }
   });
 
-  const [bookmark, setBookmark] = useLocalStorage("bookmark");
+  const [bookmark, setBookmark] = useLocalStorage("bookmark", "false");
 
-  const [favs, setFavs] = useLocalStorage();
+  const [favs, setFavs] = useLocalStorage("favs", "false");
 
   return (
     <Layout>
@@ -58,7 +58,6 @@ const IndexPage = ({ data }) => {
           let id = edge.node.id;
           let slug = edge.node.slug;
           let title = edge.node.title;
-          let isFav = favs[order];
           let isBookmark = bookmark == order;
 
           return (
@@ -68,7 +67,7 @@ const IndexPage = ({ data }) => {
               id={order}
               slug={slug}
               title={title}
-              isFav={isFav}
+              favs={favs}
               isBookmark={isBookmark}
             />
           );

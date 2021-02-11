@@ -14,8 +14,8 @@ function PoemCard(props) {
         fontFamily: "heading",
       }}
     >
-      {props.isFav == "true" && (
-        <LikeBtn index={props.order} isFav={props.isFav}></LikeBtn>
+      {props.favs[props.order] && (
+        <LikeBtn index={props.order} favs={props.favs}></LikeBtn>
       )}
 
       <a

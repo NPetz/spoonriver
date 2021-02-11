@@ -9,8 +9,10 @@ import ColorMode from '../components/ColorMode'
 function Layout({ children }) {
 
   useEffect(() => {
+    let favs = { init: 'true' }
+    favs = JSON.stringify(favs)
     window.localStorage.getItem('bookmark') ?? window.localStorage.setItem('bookmark', 'false')
-    window.localStorage.getItem('favs') ?? window.localStorage.setItem('favs', 'false')
+    window.localStorage.getItem('favs') ?? window.localStorage.setItem('favs', favs)
   })
 
 

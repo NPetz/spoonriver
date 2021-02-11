@@ -6,11 +6,31 @@ import { useEffect, useState } from "react"
 
 function LikeBtn(props) {
 
-    const [isFav, setFav] = useState(props.isFav === 'true')
+
+
+    const [isFav, setFav] = useState(props.favs[props.index])
 
     useEffect(() => {
-        window.localStorage.setItem(`${props.index}`, JSON.stringify(isFav))
-    })
+
+        try {
+            let o = window.localStorage.getItem('favs')
+            if (o) {
+                console.log('send info from button')
+                o = JSON.parse(o)
+
+                o[props.index] = isFav
+                o = JSON.stringify(o)
+                window.localStorage.setItem('favs', o)
+            }
+        } catch (error) {
+
+            console.log(error);
+
+        }
+
+    }
+
+    )
 
 
 
@@ -19,7 +39,7 @@ function LikeBtn(props) {
         width: ['42px', '42px', '50px',],
         flexShrink: 0,
         boxShadow: "shallowshade",
-        backgroundColor: (isFav) ? "like" : "background",
+        backgroundColor: (isFav === 'true') ? "like" : "background",
         cursor: 'pointer',
         transition: 'all 0.2s',
         ':hover': {
@@ -28,7 +48,7 @@ function LikeBtn(props) {
     }
 
     return (
-        <div className='like' sx={style} onClick={() => { setFav(!isFav) }}></div>
+        <div className='like' sx={style} onClick={() => { setFav((isFav === 'true') ? 'false' : 'true') }}></div>
     )
 
 }

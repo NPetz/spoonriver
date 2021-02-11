@@ -16,7 +16,7 @@ export default function Poem({ pageContext: { edge } }) {
     window.localStorage.setItem("bookmark", `${poem.order}`);
   });
 
-  const [isFav, setFav] = useLocalStorage(poem.order);
+  const [favs, setFavs] = useLocalStorage("favs", "false");
 
   return (
     <Layout>
@@ -44,7 +44,7 @@ export default function Poem({ pageContext: { edge } }) {
               gap: "1rem",
             }}
           >
-            <LikeBtn index={poem.order} isFav={isFav}></LikeBtn>
+            <LikeBtn index={poem.order} favs={favs}></LikeBtn>
             <h1
               sx={{
                 width: "100%",

@@ -17,7 +17,7 @@
 - [ ] inline comments (via github)
 - [ ] line by line audio playback
 - [ ] animated backgrounds
-- [ ] dark mode
+- [x] dark mode
 - [ ] pwa
 - [ ] api redirect to last visited poem
 - [ ] horizontal page navigation
