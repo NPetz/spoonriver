@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Layout from "../components/Layout";
 import PoemCard from "../components/PoemCard";
 import useLocalStorage from "../hooks/useLocalStorage";
+import Header from "../components/Header";
 
 const IndexPage = ({ data }) => {
   useEffect(() => {
@@ -37,21 +38,7 @@ const IndexPage = ({ data }) => {
           alignItems: "center",
         }}
       >
-        <h1
-          id="title"
-          sx={{
-            fontFamily: "heading",
-            boxShadow: "shallowshade",
-            width: ["90vw", "60vw", "46rem"],
-            backgroundColor: "bookmarkBackground",
-            textAlign: "center",
-            color: "background",
-            cursor: "pointer",
-            padding: 4,
-          }}
-        >
-          The Spoon River Anthology
-        </h1>
+        <Header />
 
         {data.allSpoonRiverJson.edges.map((edge) => {
           let order = edge.node.order;

@@ -41,7 +41,7 @@ export default {
   },
 
   lineHeights: {
-    body: 1.5,
+    body: 2,
     heading: 1.125,
   },
 

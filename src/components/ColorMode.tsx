@@ -8,16 +8,27 @@ function ColorMode() {
   return (
     <div
       sx={{
-        display: "block",
-        height: "3rem",
-        width: "3rem",
+        display: "grid",
+        placeItems: "center",
+        height: ["42px", "42px", "50px"],
+        width: ["42px", "42px", "50px"],
         backgroundColor: "text",
         flexShrink: 0,
+        cursor: "pointer",
+        boxShadow: "shallowshade",
       }}
       onClick={(e) => {
         setColorMode(colorMode === "default" ? "dark" : "default");
       }}
-    ></div>
+    >
+      <div
+        sx={{
+          height: ["21px", "21px", "25px"],
+          width: ["21px", "21px", "25px"],
+          backgroundColor: "background",
+        }}
+      ></div>
+    </div>
   );
 }
 

@@ -43,9 +43,12 @@ function LikeBtn(props) {
         cursor: 'pointer',
         transition: 'all 0.2s',
         position: 'relative',
+        marginRight: ['-21px', '-21px', '-25px',],
+        zIndex: 0,
         ':hover': {
             boxShadow: "glow",
-            transform: 'scale(0.98)'
+            transform: 'scale(0.98)',
+            marginRight: '0px',
         }
     }
 

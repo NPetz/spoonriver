@@ -55,6 +55,7 @@ export default function Poem({ pageContext: { edge } }) {
                 backgroundColor: "primary",
                 fontFamily: "heading",
                 fontSize: ["0.8rem", "1.2rem", "1.4rem"],
+                zIndex: 2,
               }}
             >
               {poem.title}
@@ -86,22 +87,17 @@ export default function Poem({ pageContext: { edge } }) {
             display: "flex",
             flexWrap: "nowrap",
             justifyContent: "space-between",
+            alignItems: "center",
             gap: "1rem",
           }}
         >
+          <PoemNavBtn path="/">🏠</PoemNavBtn>
+
           {previousPoem && (
-            <PoemNavBtn path={`/${previousPoem.slug}#${previousPoem.slug}`}>
-              Previous
-            </PoemNavBtn>
+            <PoemNavBtn path={`/${previousPoem.slug}`}>◀</PoemNavBtn>
           )}
 
-          <PoemNavBtn path="/">Home</PoemNavBtn>
-
-          {nextPoem && (
-            <PoemNavBtn path={`/${nextPoem.slug}#${nextPoem.slug}`}>
-              Next
-            </PoemNavBtn>
-          )}
+          {nextPoem && <PoemNavBtn path={`/${nextPoem.slug}`}>▶</PoemNavBtn>}
           <ColorMode />
         </div>
       </div>

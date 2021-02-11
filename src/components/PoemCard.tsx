@@ -21,10 +21,7 @@ function PoemCard(props) {
         fontFamily: "heading",
       }}
     >
-      {visible === "true" && (
-        <LikeBtn index={props.order} favs={props.favs}></LikeBtn>
-      )}
-
+      <LikeBtn index={props.order} favs={props.favs}></LikeBtn>
       <a
         id={props.order}
         sx={{
@@ -39,6 +36,7 @@ function PoemCard(props) {
           display: "flex",
           flexWrap: "nowrap",
           textDecoration: "none",
+          zIndex: 2,
           ":hover": {
             backgroundColor: "primary",
             color: "background",

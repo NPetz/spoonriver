@@ -28,5 +28,11 @@
 - [ ] congratulatory message on visiting all pages
 - [ ] save pieces by higlighting
 - [ ] share portions
+- [ ] random poem button
+- [ ] easy acces menu
+- [ ] favorites / bookmarks menu
+- [ ] scroll to toop button
+- [ ] navigation by scrolling
+- [ ] only poem screen mode
 
 # issues
