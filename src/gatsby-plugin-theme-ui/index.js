@@ -24,7 +24,8 @@ export default {
   },
 
   shadows: {
-    shallowshade: '1px 1px 5px #2B2D42, -1px -1px 5px #EDF2F4'
+    shallowshade: '0px 0px 5px #1a936f, 0px 0px 3px #2B2D42',
+    glow: '0px 0px 3px #1a936f, 0px 0px 1px #2B2D42'
   },
 
   fonts: {

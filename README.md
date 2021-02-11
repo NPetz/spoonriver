@@ -28,3 +28,5 @@
 - [ ] congratulatory message on visiting all pages
 - [ ] save pieces by higlighting
 - [ ] share portions
+
+# issues

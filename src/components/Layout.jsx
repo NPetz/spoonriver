@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useEffect } from "react"
-import ColorMode from '../components/ColorMode'
+
 
 
 
@@ -19,12 +19,12 @@ function Layout({ children }) {
 
   return (
     <main sx={{
-      minHeight: '100vh',
-      display: 'grid',
-      placeItems: 'center',
-      padding: ['1rem 0.5rem', '2rem 1rem', '2.5rem 1.5rem'],
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      padding: '1rem 0rem'
     }}>
-      <ColorMode />
+
 
 
       {children}

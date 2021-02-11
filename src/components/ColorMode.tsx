@@ -6,19 +6,18 @@ function ColorMode() {
   const [colorMode, setColorMode] = useColorMode();
 
   return (
-    <button
+    <div
       sx={{
-        position: "fixed",
-        top: "1rem",
-        right: "1rem",
         display: "block",
+        height: "3rem",
+        width: "3rem",
+        backgroundColor: "text",
+        flexShrink: 0,
       }}
       onClick={(e) => {
         setColorMode(colorMode === "default" ? "dark" : "default");
       }}
-    >
-      Toggle {colorMode === "default" ? "Dark" : "Light"}
-    </button>
+    ></div>
   );
 }
 

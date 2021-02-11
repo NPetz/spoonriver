@@ -6,6 +6,7 @@ import Layout from "../components/Layout";
 import PoemNavBtn from "../components/PoemNavBtn";
 import LikeBtn from "../components/LikeBtn";
 import useLocalStorage from "../hooks/useLocalStorage";
+import ColorMode from "../components/ColorMode";
 
 export default function Poem({ pageContext: { edge } }) {
   let poem = edge.node;
@@ -72,9 +73,10 @@ export default function Poem({ pageContext: { edge } }) {
               fontFamily: "body",
               fontSize: ["0.6rem", "1rem", "1.2rem"],
               padding: ["1rem", "2rem", "4rem"],
+              margin: "0",
             }}
           >
-            {poem.text}
+            {poem.text.replace("\n", "")}
           </p>
         </article>
 
@@ -100,6 +102,7 @@ export default function Poem({ pageContext: { edge } }) {
               Next
             </PoemNavBtn>
           )}
+          <ColorMode />
         </div>
       </div>
     </Layout>

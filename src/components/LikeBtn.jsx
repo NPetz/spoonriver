@@ -42,8 +42,10 @@ function LikeBtn(props) {
         backgroundColor: (isFav === 'true') ? "like" : "background",
         cursor: 'pointer',
         transition: 'all 0.2s',
+        position: 'relative',
         ':hover': {
-            filter: 'drop-shadow(0px 0px 10px #e86252);',
+            boxShadow: "glow",
+            transform: 'scale(0.98)'
         }
     }
 

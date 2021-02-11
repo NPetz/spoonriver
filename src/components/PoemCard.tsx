@@ -3,6 +3,13 @@ import { jsx } from "theme-ui";
 import LikeBtn from "../components/LikeBtn";
 
 function PoemCard(props) {
+  let order = props.order;
+  let favs = props.favs;
+
+  let visible = favs[order];
+
+  console.log(typeof visible, visible);
+
   return (
     <div
       sx={{
@@ -14,7 +21,7 @@ function PoemCard(props) {
         fontFamily: "heading",
       }}
     >
-      {props.favs[props.order] && (
+      {visible === "true" && (
         <LikeBtn index={props.order} favs={props.favs}></LikeBtn>
       )}
 
@@ -37,7 +44,7 @@ function PoemCard(props) {
             color: "background",
           },
         }}
-        href={`/${props.slug}#${props.slug}`}
+        href={`/${props.slug}`}
       >
         <h2>{props.title}</h2>
 
