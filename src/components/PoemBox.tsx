@@ -12,10 +12,15 @@ function PoemBox({ children, poem }) {
   });
 
   return (
-    <p
+    <div
       sx={{
-        height: "70vh",
         overflowY: "auto",
+        width: "100%",
+        flexGrow: 1,
+        display: "grid",
+        placeItems: "center",
+        // justifyContent: "center",
+        // overflowX: "hidden",
         boxShadow: "shallowshade",
         backgroundColor: "poemBackground",
         whiteSpace: "pre",
@@ -23,7 +28,7 @@ function PoemBox({ children, poem }) {
         fontSmooth: "true",
         lineHeight: "body",
         fontFamily: "body",
-        fontSize: "2.73vw",
+        fontSize: ["3.05vw", "2.85vw", "2.73vw"],
         // fontSize: ["0.5rem", "1.4rem", "1.8rem"],
         padding: ["0.5rem", "1rem", "2rem"],
         margin: "0",
@@ -34,12 +39,20 @@ function PoemBox({ children, poem }) {
           backgroundColor: "background",
         },
         "::-webkit-scrollbar-thumb": {
-          backgroundColor: "primary",
+          backgroundColor: "text",
         },
       }}
     >
-      {children}
-    </p>
+      <p
+        sx={{
+          margin: 0,
+          padding: 0,
+          width: "min-content",
+        }}
+      >
+        {children}
+      </p>
+    </div>
   );
 }
 

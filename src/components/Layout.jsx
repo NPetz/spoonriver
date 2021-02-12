@@ -22,7 +22,9 @@ function Layout({ children }) {
       display: 'grid',
       minHeight: '100vh',
       placeItems: 'center',
-      padding: ['1rem 0rem', '1rem 0rem', '1rem 0rem'],
+      padding: '0',
+      margin: '0',
+
     }}>
 
 

@@ -22,51 +22,49 @@ export default function Poem({ pageContext: { edge } }) {
 
   return (
     <Layout>
-      <div
+      <article
         sx={{
-          width: ["95vw", "95vw", "85vw"],
+          height: "100vh",
           display: "flex",
           flexDirection: "column",
+          flexWrap: "nowrap",
           gap: "1rem",
           alignItems: "center",
+          width: "100%",
+          padding: ["1rem 0.5rem ", "1rem ", "1rem "],
         }}
       >
-        <article
+        <header
+          id={poem.slug}
           sx={{
             width: "100%",
+            display: "flex",
+            flexWrap: "nowrap",
+            alignItems: "center",
+            gap: "1rem",
           }}
         >
-          <header
-            id={poem.slug}
+          <LikeBtn index={poem.order} favs={favs}></LikeBtn>
+          <h1
             sx={{
               width: "100%",
-              display: "flex",
-              flexWrap: "nowrap",
-              alignItems: "center",
-              gap: "1rem",
+              padding: "1rem",
+              boxShadow: "shallowshade",
+              color: "headerText",
+              backgroundColor: "primary",
+              fontFamily: "heading",
+              fontSize: ["0.8rem", "1.2rem", "1.4rem"],
+              zIndex: 2,
+              margin: "0",
             }}
           >
-            <LikeBtn index={poem.order} favs={favs}></LikeBtn>
-            <h1
-              sx={{
-                width: "100%",
-                padding: "1rem",
-                boxShadow: "shallowshade",
-                color: "headerText",
-                backgroundColor: "primary",
-                fontFamily: "heading",
-                fontSize: ["0.8rem", "1.2rem", "1.4rem"],
-                zIndex: 2,
-              }}
-            >
-              {poem.title}
-            </h1>
-          </header>
+            {poem.title}
+          </h1>
+        </header>
 
-          <PoemBox poem={poem}>{poem.text.replace("\n", "")}</PoemBox>
-        </article>
+        <PoemBox poem={poem}>{poem.text.replace("\n", "")}</PoemBox>
 
-        <div
+        <footer
           sx={{
             width: "100%",
             display: "flex",
@@ -84,8 +82,8 @@ export default function Poem({ pageContext: { edge } }) {
 
           {nextPoem && <PoemNavBtn path={`/${nextPoem.slug}`}>▶</PoemNavBtn>}
           <ColorMode />
-        </div>
-      </div>
+        </footer>
+      </article>
     </Layout>
   );
 }
