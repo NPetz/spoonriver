@@ -12,9 +12,18 @@ function PoemCard(props) {
         gap: "1rem",
         alignItems: "center",
         fontFamily: "heading",
+        position: "relative",
       }}
     >
-      <LikeBtn index={props.order} favs={props.favs}></LikeBtn>
+      <LikeBtn
+        index={props.order}
+        favs={props.favs}
+        style={{
+          position: "absolute",
+          right: "10%",
+          top: "-5%",
+        }}
+      ></LikeBtn>
       <a
         id={props.order}
         sx={{
@@ -29,7 +38,6 @@ function PoemCard(props) {
           display: "flex",
           flexWrap: "nowrap",
           textDecoration: "none",
-          zIndex: 2,
           ":hover": {
             backgroundColor: "poemcardText",
             color: "poemcardBackground",

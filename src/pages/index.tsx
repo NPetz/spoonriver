@@ -12,6 +12,7 @@ const IndexPage = ({ data }) => {
   const [bookmark, setBookmark] = useLocalStorage("bookmark", "false");
 
   const [favs, setFavs] = useLocalStorage("favs", "false");
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     window.addEventListener("dblclick", () => {
@@ -23,19 +24,27 @@ const IndexPage = ({ data }) => {
     });
   });
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 200 ? setScrolled(true) : setScrolled(false);
+    });
+  });
+
   return (
     <Layout>
       <div
         sx={{
           display: "flex",
           flexDirection: "column",
-          gap: "1rem",
+          gap: "1.5rem",
           alignItems: "center",
           maxWidth: ["90vw", "80vw", "60vw"],
+          padding: "1rem",
         }}
       >
         <Header />
-        <GoUp />
+
+        {scrolled && <GoUp />}
 
         {data.allSpoonRiverJson.edges.map((edge) => {
           let order = edge.node.order;

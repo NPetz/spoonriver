@@ -43,7 +43,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Righteous', 'Bodoni Moda']
+          families: ['Righteous', 'Lato']
         }
       }
     },

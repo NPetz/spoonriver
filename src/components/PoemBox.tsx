@@ -28,9 +28,9 @@ function PoemBox({ children, poem }) {
         fontSmooth: "true",
         lineHeight: "body",
         fontFamily: "body",
-        fontSize: ["3.05vw", "2.85vw", "2.73vw"],
+        fontSize: ["2.8vw", "2.85vw", "2.73vw"],
         // fontSize: ["0.5rem", "1.4rem", "1.8rem"],
-        padding: ["0.5rem", "1rem", "2rem"],
+        padding: ["1rem", "2rem", "3rem"],
         margin: "0",
         "::-webkit-scrollbar": {
           width: "0.5em",

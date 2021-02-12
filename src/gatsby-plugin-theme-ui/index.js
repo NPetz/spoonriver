@@ -61,7 +61,7 @@ export default {
   },
 
   fonts: {
-    body: "'Bodoni Moda', serif",
+    body: "'Lato', sans-serif",
     heading: "'Heebo', sans-serif",
     monospace: "Menlo, monospace",
     display: "'Righteous', cursive",

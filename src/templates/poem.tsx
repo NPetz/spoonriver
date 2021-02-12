@@ -41,10 +41,18 @@ export default function Poem({ pageContext: { edge } }) {
             display: "flex",
             flexWrap: "nowrap",
             alignItems: "center",
-            gap: "1rem",
+            position: "relative",
           }}
         >
-          <LikeBtn index={poem.order} favs={favs}></LikeBtn>
+          <LikeBtn
+            index={poem.order}
+            favs={favs}
+            style={{
+              position: "absolute",
+              right: "5%",
+              top: "-5%",
+            }}
+          ></LikeBtn>
           <h1
             sx={{
               width: "100%",
@@ -71,7 +79,6 @@ export default function Poem({ pageContext: { edge } }) {
             flexWrap: "nowrap",
             justifyContent: "space-between",
             alignItems: "center",
-            gap: "1rem",
           }}
         >
           <PoemNavBtn path="/">🏠</PoemNavBtn>
