@@ -10,15 +10,13 @@ function PoemNavBtn({ children, path }) {
         display: "grid",
         placeItems: "center",
         boxShadow: "shallowshade",
-        backgroundColor: "background",
+        backgroundColor: "button",
         color: "primary",
         fontSize: ["0.6rem", "1.0rem", "1.2rem"],
-        fontFamily: "heading",
-        textTransform: "uppercase",
         textDecoration: "none",
         transition: "all 0.2s",
         ":hover": {
-          color: "background",
+          color: "button",
           backgroundColor: "primary",
         },
       }}

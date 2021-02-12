@@ -15,7 +15,6 @@ function LikeBtn(props) {
         try {
             let o = window.localStorage.getItem('favs')
             if (o) {
-                console.log('send info from button')
                 o = JSON.parse(o)
 
                 o[props.index] = isFav
@@ -39,7 +38,7 @@ function LikeBtn(props) {
         width: ['36px', '42px', '50px',],
         flexShrink: 0,
         boxShadow: "shallowshade",
-        backgroundColor: (isFav === 'true') ? "like" : "background",
+        backgroundColor: (isFav === 'true') ? "like" : "off",
         cursor: 'pointer',
         transition: 'all 0.2s',
         position: 'relative',

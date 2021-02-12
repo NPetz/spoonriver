@@ -3,13 +3,6 @@ import { jsx } from "theme-ui";
 import LikeBtn from "../components/LikeBtn";
 
 function PoemCard(props) {
-  let order = props.order;
-  let favs = props.favs;
-
-  let visible = favs[order];
-
-  console.log(typeof visible, visible);
-
   return (
     <div
       sx={{
@@ -30,16 +23,16 @@ function PoemCard(props) {
           boxShadow: "shallowshade",
           backgroundColor: props.isBookmark
             ? "bookmarkBackground"
-            : "background",
-          color: props.isBookmark ? "bookmarkText" : "text",
+            : "poemcardBackground",
+          color: props.isBookmark ? "bookmarkText" : "poemcardText",
           transition: "all 0.2s",
           display: "flex",
           flexWrap: "nowrap",
           textDecoration: "none",
           zIndex: 2,
           ":hover": {
-            backgroundColor: "primary",
-            color: "background",
+            backgroundColor: "poemcardText",
+            color: "poemcardBackground",
           },
         }}
         href={`/${props.slug}`}

@@ -4,31 +4,59 @@ export default {
   // optional style overrides go here
   colors: {
 
+
+    background: '#2274a5',
+    primary: '#2274a5',
+    button: '#242423',
+
     text: '#242423',
-    background: '#E8EDDF',
-    primary: '#F5CB5C',
-    like: '#EF233C',
-    bookmarkText: '#E8EDDF',
-    bookmarkBackground: '#242423',
-    poemBackground: '#eee',
+
+    like: '#e63946',
+    off: 'rgba(239,34,60,0.2)',
+
+    opposite: '#1a936f',
+
+    poemBackground: '#f1faee',
+    poemText: '#242423',
+
+
+    poemcardText: '#242423',
+    poemcardBackground: '#f1faee',
+
+    bookmarkText: '#f1faee',
+    bookmarkBackground: '#1A3365',
+
+
+    headerText: '#f1faee',
+    headerBackground: 'transparent',
 
     modes: {
 
       dark: {
-        text: '#EDF2F4',
+        text: '#f1faee',
         background: '#2B2D42',
         primary: '#1a936f',
         like: '#EF233C',
+        opposite: '#2274a5',
+
+        poemText: '#eee',
+        poemBackground: '#111',
+
+        poemcardText: '#f1faee',
+        poemcardBackground: '#242423',
         bookmarkText: '#2B2D42',
         bookmarkBackground: '#1a936f',
         poemBackground: '#242423',
+
+        headerText: '#1a936f',
+        headerBackground: 'transparent',
       },
 
     },
   },
 
   shadows: {
-    shallowshade: '0px 0px 5px #242423, 0px 0px 3px #2B2D42',
+    shallowshade: '0px 0px 5px #242423, 0px 0px 3px #2B2D42,0px 0px 3px #EDF2F4',
     glow: '0px 0px 3px #F5CB5C, 0px 0px 1px #2B2D42'
   },
 

@@ -1,12 +1,13 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { useEffect } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 import Layout from "../components/Layout";
 import PoemNavBtn from "../components/PoemNavBtn";
 import LikeBtn from "../components/LikeBtn";
-import useLocalStorage from "../hooks/useLocalStorage";
 import ColorMode from "../components/ColorMode";
+import PoemBox from "../components/PoemBox";
 
 export default function Poem({ pageContext: { edge } }) {
   let poem = edge.node;
@@ -51,7 +52,7 @@ export default function Poem({ pageContext: { edge } }) {
                 width: "100%",
                 padding: "1rem",
                 boxShadow: "shallowshade",
-                color: "background",
+                color: "headerText",
                 backgroundColor: "primary",
                 fontFamily: "heading",
                 fontSize: ["0.8rem", "1.2rem", "1.4rem"],
@@ -62,33 +63,7 @@ export default function Poem({ pageContext: { edge } }) {
             </h1>
           </header>
 
-          <p
-            sx={{
-              height: "70vh",
-              overflowY: "auto",
-              boxShadow: "shallowshade",
-              backgroundColor: "poemBackground",
-              whiteSpace: "pre",
-              color: "text",
-              fontSmooth: "true",
-              lineHeight: "body",
-              fontFamily: "body",
-              fontSize: ["0.5rem", "1.4rem", "1.8rem"],
-              padding: ["0.5rem", "1rem", "2rem"],
-              margin: "0",
-              "::-webkit-scrollbar": {
-                width: "0.5em",
-              },
-              "::-webkit-scrollbar-track": {
-                backgroundColor: "background",
-              },
-              "::-webkit-scrollbar-thumb": {
-                backgroundColor: "primary",
-              },
-            }}
-          >
-            {poem.text.replace("\n", "")}
-          </p>
+          <PoemBox poem={poem}>{poem.text.replace("\n", "")}</PoemBox>
         </article>
 
         <div

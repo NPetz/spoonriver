@@ -19,7 +19,8 @@
 - [ ] animated backgrounds
 - [x] dark mode
 - [ ] pwa
-- [ ] api redirect to last visited poem
+- [ ] api
+- [ ] redirect to last visited poem
 - [ ] horizontal page navigation
 - [ ] internal hyperlinks to other poems
 - [ ] poem metadata
@@ -28,11 +29,22 @@
 - [ ] congratulatory message on visiting all pages
 - [ ] save pieces by higlighting
 - [ ] share portions
-- [ ] random poem button
+- [x] random poem button
 - [ ] easy acces menu
 - [ ] favorites / bookmarks menu
-- [ ] scroll to toop button
+- [x] scroll to toop button
 - [ ] navigation by scrolling
 - [ ] only poem screen mode
+- [x] doubleclick to scroll top
+- [ ] hover:lowopacity curso -> oneclik: higher opacity -> 2clicks: scrolltop
+- [ ] stats page with visualization
+- [ ] pointer proximity sensor on elements
+- [ ] easter egg color mode (random chance)
+- [ ] about page with history
+- [ ] history and explnation for every character
+- [ ] fabrizio de andre music for relevant poems with visualization
+- [ ] extemporaneous comment with mongodb
+- [ ] aniamted header rolling images
+- [ ] various swipe controls
 
 # issues

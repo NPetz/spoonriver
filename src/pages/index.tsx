@@ -6,27 +6,22 @@ import Layout from "../components/Layout";
 import PoemCard from "../components/PoemCard";
 import useLocalStorage from "../hooks/useLocalStorage";
 import Header from "../components/Header";
+import GoUp from "../components/GoUp";
 
 const IndexPage = ({ data }) => {
-  useEffect(() => {
-    const bookmark = window.localStorage.getItem("bookmark");
-
-    if (bookmark) {
-      let el = window.document.getElementById(`${bookmark}`);
-      let title = document.getElementById("title");
-      title.addEventListener("click", () => {
-        el.scrollIntoView({
-          behavior: "smooth",
-          block: "center",
-          inline: "nearest",
-        });
-      });
-    }
-  });
-
   const [bookmark, setBookmark] = useLocalStorage("bookmark", "false");
 
   const [favs, setFavs] = useLocalStorage("favs", "false");
+
+  useEffect(() => {
+    window.addEventListener("dblclick", () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    });
+  });
 
   return (
     <Layout>
@@ -40,6 +35,7 @@ const IndexPage = ({ data }) => {
         }}
       >
         <Header />
+        <GoUp />
 
         {data.allSpoonRiverJson.edges.map((edge) => {
           let order = edge.node.order;
