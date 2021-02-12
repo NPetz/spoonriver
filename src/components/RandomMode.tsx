@@ -43,7 +43,7 @@ function RandomMode() {
         placeItems: "center",
         height: ["42px", "42px", "50px"],
         width: ["126px", "126px", "150px"],
-        backgroundColor: "#40AD76",
+        backgroundColor: "luck",
         flexShrink: 0,
         cursor: "pointer",
         boxShadow: "shallowshade",

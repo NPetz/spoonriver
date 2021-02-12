@@ -32,24 +32,23 @@ function LikeBtn(props) {
 
     )
 
-    let onColor = '#e63946'
-    let offColor = 'rgba(239, 34, 60, 0.2)'
 
     let style = {
         height: ['36px', '42px', '50px',],
         width: ['36px', '42px', '50px',],
         flexShrink: 0,
-        backgroundColor: (isFav === 'true') ? "like" : "off",
+        boxShadow: 'shallowshade',
+        backgroundColor: "like",
         cursor: 'pointer',
         transition: 'all 0.2s',
         position: 'relative',
         zIndex: 2,
-        opacity: (isFav === 'true') ? 1 : 0.2,
-        filter: 'drop-shadow(0px 0px 1px #242423)',
+        opacity: (isFav === 'true') ? 1 : 0.3,
         ':hover': {
-            filter: 'drop-shadow(0px 0px 10px #e63946)',
             opacity: (isFav === 'true') ? 0.2 : 1,
+            transform: 'scale(1.1)',
         },
+
         ...props.style
     }
 

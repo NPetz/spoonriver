@@ -7,12 +7,12 @@ export default {
 
     background: '#2274a5',
     primary: '#2274a5',
-    button: '#242423',
+    button: '#2274a5',
 
     text: '#242423',
 
     like: '#e63946',
-    off: 'rgba(239,34,60,0.2)',
+    luck: '#88D498',
 
     opposite: '#1a936f',
 
@@ -33,23 +33,48 @@ export default {
     modes: {
 
       dark: {
+        background: '#242423',
+        primary: '#1A936F',
+        button: '#1A936F',
+
         text: '#f1faee',
-        background: '#2B2D42',
-        primary: '#1a936f',
-        like: '#EF233C',
+
+        like: '#e63946',
+        luck: '#88D498',
+
         opposite: '#2274a5',
 
-        poemText: '#eee',
         poemBackground: '#111',
+        poemText: '#fff',
+
 
         poemcardText: '#f1faee',
-        poemcardBackground: '#242423',
-        bookmarkText: '#2B2D42',
-        bookmarkBackground: '#1a936f',
-        poemBackground: '#242423',
+        poemcardBackground: '#111',
 
-        headerText: '#1a936f',
+        bookmarkText: '#f1faee',
+        bookmarkBackground: '#1A936F',
+
+
+        headerText: '#f1faee',
         headerBackground: 'transparent',
+
+        // text: '#f1faee',
+        // background: '#242423',
+        // primary: '#1a936f',
+        // like: '#EF233C',
+        // opposite: '#2274a5',
+
+        // poemText: '#eee',
+        // poemBackground: '#111',
+
+        // poemcardText: '#1a936f',
+        // poemcardBackground: '#242423',
+        // bookmarkText: '#242423',
+        // bookmarkBackground: '#1a936f',
+        // poemBackground: '#242423',
+
+        // headerText: '#242423',
+        // headerBackground: 'transparent',
       },
 
     },

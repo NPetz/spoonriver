@@ -62,7 +62,6 @@ export default function Poem({ pageContext: { edge } }) {
               backgroundColor: "primary",
               fontFamily: "heading",
               fontSize: ["0.8rem", "1.2rem", "1.4rem"],
-              zIndex: 2,
               margin: "0",
             }}
           >
