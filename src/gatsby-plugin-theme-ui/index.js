@@ -26,7 +26,6 @@ export default {
     bookmarkText: '#f1faee',
     bookmarkBackground: '#1A3365',
 
-
     headerText: '#f1faee',
     headerBackground: 'transparent',
 
@@ -57,31 +56,13 @@ export default {
 
         headerText: '#f1faee',
         headerBackground: 'transparent',
-
-        // text: '#f1faee',
-        // background: '#242423',
-        // primary: '#1a936f',
-        // like: '#EF233C',
-        // opposite: '#2274a5',
-
-        // poemText: '#eee',
-        // poemBackground: '#111',
-
-        // poemcardText: '#1a936f',
-        // poemcardBackground: '#242423',
-        // bookmarkText: '#242423',
-        // bookmarkBackground: '#1a936f',
-        // poemBackground: '#242423',
-
-        // headerText: '#242423',
-        // headerBackground: 'transparent',
       },
 
     },
   },
 
   shadows: {
-    shallowshade: '0px 0px 5px #242423, 0px 0px 3px #2B2D42,0px 0px 3px #EDF2F4',
+    shallowshade: '0px 0px 5px rgb( 10 10 10 / 70%)',
     glow: '0px 0px 3px #F5CB5C, 0px 0px 1px #2B2D42'
   },
 
@@ -104,12 +85,6 @@ export default {
   },
 
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
-
-
-  // VARIANTS
-
-
-
 
   gap: {
     small: ["0.5rem", "1rem", "1.5rem"],

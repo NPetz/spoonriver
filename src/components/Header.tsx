@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import Bookmark from "./Bookmark";
-
 import ColorMode from "./ColorMode";
 import RandomMode from "./RandomMode";
 
@@ -36,7 +35,7 @@ function Header() {
           },
         }}
       >
-        The Spoon River Anthology
+        Spoon River Anthology
       </h1>
       <div
         sx={{

@@ -3,7 +3,7 @@
 [LIVE SITE](https://eloquent-elion-8f88ca.netlify.app/)
 # about
 
-"The Spoon River Anthology" by Edgar Lee Masters as an interactive website
+"Spoon River Anthology" by Edgar Lee Masters as an interactive website
 
 # features (WIP)
 

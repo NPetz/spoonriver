@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { useEffect, useState } from "react"
-import { Transform } from "stream"
 
 
 
@@ -45,7 +44,6 @@ function LikeBtn(props) {
         zIndex: 2,
         opacity: (isFav === 'true') ? 1 : 0.3,
         ':hover': {
-            opacity: (isFav === 'true') ? 0.2 : 1,
             transform: 'scale(1.1)',
         },
 
@@ -53,7 +51,7 @@ function LikeBtn(props) {
     }
 
     return (
-        <div className='like' sx={style} onClick={() => { setFav((isFav === 'true') ? 'false' : 'true') }
+        <div className='like' role='tab' aria-label='add as favorite' sx={style} onClick={() => { setFav((isFav === 'true') ? 'false' : 'true') }
         }></div >
     )
 
